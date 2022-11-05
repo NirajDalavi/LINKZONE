@@ -24,7 +24,7 @@ def login():
             return redirect(url_for('account'))
         else:
             flash(f'Login unsuccessful for {form.username.data}', category="danger")
-            return render_template('login.html',title='login',form=form)
+    return render_template('login.html',title='login',form=form)
 
 if __name__=="__main__":
     app.run(debug=True)        
