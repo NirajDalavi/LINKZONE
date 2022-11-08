@@ -28,8 +28,7 @@ def signup():
 
 @app.route("/account")
 @app.route("/login",methods=['POST','GET'])
-def login():
-   
+def login(): 
     if request.method=='POST':
         connection=sqlite3.connect('users_data.db')
         cursor=connection.cursor()
