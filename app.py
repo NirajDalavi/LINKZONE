@@ -47,8 +47,13 @@ def login():
         if len(results)==0:
             print("Incorrect Credentials provided.Try Again!")
         else:
+<<<<<<< HEAD
             return render_template('account.html')
     return render_template('login.html')           
+=======
+            flash(f'Login unsuccessful for {form.username.data}', category="danger")
+    return render_template('login.html',title='login',form=form)
+>>>>>>> 8bf804c3471524a8374f58c8f4b87ec7a18b31da
 
 if __name__=="__main__":
     app.run(debug=True)        
