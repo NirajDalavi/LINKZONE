@@ -9,7 +9,7 @@ body {
   top: 0%;
   left: 0%;
   display: flex;
-  background-color: black;
+  background-color: #01161e;
   box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.75);
   color: white;
   position: fixed;
@@ -155,8 +155,9 @@ body {
 
 .footer-basic {
   padding: 40px 0;
-  background-color: #ffffff;
-  color: #4b4c4d;
+  background-color: #242424;
+  /* color: #4b4c4d; */
+  color: azure;
 }
 
 .footer-basic ul {
@@ -166,6 +167,7 @@ body {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 0;
+  
 }
 
 .footer-basic li {
@@ -180,12 +182,16 @@ body {
 
 .footer-basic ul a:hover {
   opacity: 1;
+  /* color: white; */
 }
 
 .footer-basic .social {
   text-align: center;
   padding-bottom: 25px;
+
 }
+
+
 
 .footer-basic .social > a {
   font-size: 24px;
@@ -199,6 +205,7 @@ body {
   margin: 0 8px;
   color: inherit;
   opacity: 0.75;
+  
 }
 
 .footer-basic .social > a:hover {
