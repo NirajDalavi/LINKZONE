@@ -1,0 +1,85 @@
+*{
+ padding: 0;
+ box-sizing: border-box;
+ margin: 0;
+ background-color: rgba(7, 7, 7, 0);
+}
+
+.nav{
+ height: 30vh;
+}
+
+.login_form{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ 
+}
+
+.email_container{
+ display: flex;
+ height: 50px;
+ position: relative;
+ margin:10px;
+ 
+}
+.user_icon{
+position: absolute;
+height: 40px;
+left: -9%;
+}
+.email{
+ height: 50px;
+ border-radius: 50px;
+ border: none;
+ background-color: rgba(0, 0, 0, 0.1);
+ width: 40vw;
+ font-size: 20px;
+ padding: 15px;
+ 
+}
+
+.email::placeholder{
+ color: black;
+ padding-left: 1rem;
+}
+
+.password{
+ height: 50px;
+ border-radius: 50px;
+ border: none;
+ background-color: rgba(0, 0, 0, 0.1);
+ width: 40vw;
+ font-size: 20px;
+ padding: 15px;
+}
+.password_contanier{
+ display: flex;
+ height: 50px;
+ position: relative;
+ margin: 10px;
+}
+
+.password_icon{
+ position: absolute;
+height: 40px;
+left: 26.4%;
+}
+
+.password::placeholder{
+ color: black;
+ padding-left: 1rem;
+}
+
+.submit{
+ background-color: yellow;
+ border: none;
+ padding: 4px 10px;
+ width: 15vw;
+ height: 45px;
+ font-size: 20px;
+ border-radius: 30px;
+ text-transform: uppercase;
+ font-weight: 600;
+ margin: 10px;
+}
