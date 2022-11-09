@@ -16,11 +16,12 @@ def signup():
     if form.validate_on_submit():
         connection=sqlite3.connect("users_data.db")
         cursor=connection.cursor()
-        sqlite_insert="""INSERT INTO users(name,password) VALUES(?,?);"""
+        sqlite_insert="""INSERT INTO users(name,email,password) VALUES(?,?,?);"""
         username=form.username.data
         password=form.password.data
-        print(username,password)
-        data_tuple=(username,password)
+        email=form.email.data
+        # print(username,password)
+        data_tuple=(username,email,password)
         cursor.execute(sqlite_insert,data_tuple)
         connection.commit()
         flash(f'Account created successfully for {form.username.data}')
@@ -37,8 +38,7 @@ def login():
 
         name=request.form['name']
         password=request.form['password']
-        # g.lol=name
-        # print(name,password)
+      
 
         query="SELECT name,password FROM users where name='"+name+"' and password='"+password+"'" 
         cursor.execute(query)
@@ -55,9 +55,7 @@ def login():
 
 @app.route("/account/<name>",methods=['POST','GET'])
 def account(name):
-    # if not name:
-    #     abort(403)
-    print(name)
+    
     return render_template('account.html',name=name)
                 
 
