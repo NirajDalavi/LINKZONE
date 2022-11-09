@@ -1,10 +1,9 @@
-from flask import Flask,render_template,url_for,redirect,flash,request,session,url_for,abort
+from flask import Flask,render_template,url_for,redirect,flash,request
 from forms import SignupForm,LoginForm
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 app=Flask(__name__)
 app.config['SECRET_KEY']='linktree'
-
 @app.route('/')
 @app.route("/home")
 def home():
@@ -27,17 +26,16 @@ def signup():
         return redirect(url_for('login'))
     return render_template('signup.html',title='Signup',form=form)
 
-
+@app.route("/account")
 @app.route("/login",methods=['POST','GET'])
 def login(): 
     if request.method=='POST':
-        # session.pop('user_id',None)
         connection=sqlite3.connect('users_data.db')
         cursor=connection.cursor()
 
         name=request.form['name']
         password=request.form['password']
-        # g.lol=name
+
         # print(name,password)
 
         query="SELECT name,password FROM users where name='"+name+"' and password='"+password+"'" 
@@ -47,19 +45,9 @@ def login():
 
         if len(results)==0:
             print("Incorrect Credentials provided.Try Again!")
-            return redirect(url_for('login'))
         else:
-            # session['user_id']= name
-            return redirect(url_for('account',name=name))
-    return render_template('login.html')   
-
-@app.route("/account/<name>",methods=['POST','GET'])
-def account(name):
-    # if not name:
-    #     abort(403)
-    print(name)
-    return render_template('account.html',name=name)
-                
+            return render_template('account.html')
+    return render_template('login.html')           
 
 if __name__=="__main__":
     app.run(debug=True)        
